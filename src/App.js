@@ -1,16 +1,17 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        
-        
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      
+    };
+  }
 
-      </header>
-    </div>
-  );
+  render() {
+    return <h1 className="title">Moving Motivators v0.0.1</h1>;
+  }
 }
 
 export default App;
