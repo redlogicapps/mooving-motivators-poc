@@ -2,3 +2,14 @@
   font-family: 'Permanent Marker', cursive;
   text-align: center;
 }
+
+.paper {
+  height: 150px;
+  width: 150px;
+}
+
+.paper-center {
+  height: 150px;
+  width: 150px;
+  background-color: cornsilk !important;
+}
