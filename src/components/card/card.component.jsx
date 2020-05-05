@@ -1,6 +1,7 @@
 // @flow
 import * as React from "react";
 import { Draggable } from "react-beautiful-dnd";
+import "./card-styles.css";
 
 export const Card = (props) => {
   return (

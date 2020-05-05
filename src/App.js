@@ -20,99 +20,112 @@ class App extends React.Component {
     super();
     this.state = {
       cards: [
-        { id: "acceptance", src: acceptanceImage, key: 10 },
-        { id: "curiosity", src: curiosity, key: 11 },
-        { id: "freedom", src: freedom, key: 12 },
-        { id: "goal", src: goal, key: 13 },
-        { id: "honor", src: honor, key: 14 },
-        { id: "mastery", src: mastery, key: 15 },
-        { id: "order", src: order, key: 16 },
-        { id: "power", src: power, key: 17 },
-        { id: "relatedness", src: relatedness, key: 18 },
-        { id: "status", src: status, key: 19 },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [{ id: "acceptance", src: acceptanceImage, key: 10 }] },
+        { card: [{ id: "curiosity", src: curiosity, key: 11 }] },
+        { card: [{ id: "freedom", src: freedom, key: 12 }] },
+        { card: [{ id: "goal", src: goal, key: 13 }] },
+        { card: [{ id: "honor", src: honor, key: 14 }] },
+        { card: [{ id: "status", src: status, key: 19 }] },
+        { card: [{ id: "mastery", src: mastery, key: 15 }] },
+        { card: [{ id: "order", src: order, key: 16 }] },
+        { card: [{ id: "power", src: power, key: 17 }] },
+        { card: [{ id: "relatedness", src: relatedness, key: 18 }] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
+        { card: [] },
       ],
     };
   }
 
   onDragEnd = (result) => {
-    const { destination, source, draggableId } = result;
+    const { destination, source } = result;
+    var cardsTemp = this.state.cards;
+
     if (!destination) return;
 
-    if (destination.droppableId === source.droppableId &&
-      destination.index === source.index) {
-        return;
-      }
+    if (
+      destination.droppableId === source.droppableId &&
+      destination.index === source.index
+    ) {
+      return;
+    }
+    const card = cardsTemp[destination.droppableId].card;
+    cardsTemp[destination.droppableId].card = Array.from(
+      cardsTemp[source.droppableId].card
+    );
+    cardsTemp[source.droppableId].card = Array.from(card);
+    this.setState({ cards: cardsTemp });
   };
 
   render() {
+    const FormRow = (props) => {
+      const cards = this.state.cards.slice(
+        props.startIndex,
+        props.startIndex + props.count
+      );
+      return (
+        <React.Fragment>
+          {cards.map((value, index) => (
+            <Grid item key={this.state.cards.indexOf(value)}>
+              <Droppable
+                droppableId={this.state.cards.indexOf(value).toString()}
+                direction="horizontal"
+              >
+                {(provided) => (
+                  <Paper
+                    className={props.className}
+                    elevation={3}
+                    innerRef={provided.innerRef}
+                    {...provided.droppableProps}
+                  >
+                    {value.card.map((cardValue) => (
+                      <Card
+                        key={cardValue.id}
+                        src={cardValue.src}
+                        id={cardValue.id?cardValue.id.toString():null}
+                        index={index}
+                      />
+                    ))}
+
+                    {provided.placeholder}
+                  </Paper>
+                )}
+              </Droppable>
+            </Grid>
+          ))}
+        </React.Fragment>
+      );
+    };
+
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
         <h1 className="title">Moving Motivators v0.0.1</h1>
-        <Grid item xs={12}>
-          <Grid container justify="center" spacing={2}>
-            {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9].map((value) => (
-              <Grid key={value} item>
-                <Droppable
-                  droppableId={value.toString()}
-                  direction="horizontal"
-                >
-                  {(provided) => (
-                    <Paper
-                      className="paper"
-                      elevation={3}
-                      innerRef={provided.innerRef}
-                      {...provided.droppableProps}
-                    >
-                      {provided.placeholder}
-                    </Paper>
-                  )}
-                </Droppable>
-              </Grid>
-            ))}
+        <Grid container justify="center" spacing={2}>
+          <Grid container justify="center" item xs={12} spacing={2}>
+            <FormRow startIndex={0} count={10} className="paper" />
           </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container justify="center" spacing={2}>
-            {this.state.cards.map((value, index) => (
-              <Grid key={value.key} item>
-                <Droppable droppableId={value.id} direction="horizontal">
-                  {(provided) => (
-                    <Paper
-                      className="paper-center"
-                      elevation={3}
-                      innerRef={provided.innerRef}
-                      {...provided.droppableProps}
-                    >
-                      <Card src={value.src} id={value.id} index={index} />
-                      {provided.placeholder}
-                    </Paper>
-                  )}
-                </Droppable>
-              </Grid>
-            ))}
+          <Grid container justify="center" item xs={12} spacing={2}>
+            <FormRow startIndex={10} count={10} className="paper-center" />
           </Grid>
-        </Grid>
-        <Grid item xs={12}>
-          <Grid container justify="center" spacing={2}>
-            {[20, 21, 22, 23, 24, 25, 26, 27, 28, 29].map((value) => (
-              <Grid key={value} item>
-                <Droppable
-                  droppableId={value.toString()}
-                  direction="horizontal"
-                >
-                  {(provided) => (
-                    <Paper
-                      className="paper"
-                      elevation={3}
-                      innerRef={provided.innerRef}
-                      {...provided.droppableProps}
-                    >
-                      {provided.placeholder}
-                    </Paper>
-                  )}
-                </Droppable>
-              </Grid>
-            ))}
+          <Grid container justify="center" item xs={12} spacing={2}>
+            <FormRow startIndex={20} count={10} className="paper" />
           </Grid>
         </Grid>
       </DragDropContext>
