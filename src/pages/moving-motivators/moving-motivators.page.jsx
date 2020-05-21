@@ -34,7 +34,7 @@ class MovingMotivators extends React.Component {
   render() {
     return (
       <div>
-        <h1 className="title">Moving Motivators v0.0.1</h1>
+        <h1 className="title">Moving Motivators v0.0.2</h1>
         <CardContainer cards={this.state.cards}/>
       </div>
     );

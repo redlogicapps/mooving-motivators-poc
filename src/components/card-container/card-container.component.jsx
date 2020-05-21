@@ -44,7 +44,7 @@ const CardContainer = ({ cards }) => {
             innerRef={provided.innerRef}
             {...provided.droppableProps}
           >
-            <Paper>
+            <Paper elevation={6}>
               {cardsIntern.map((card, index) => (
                 <Card
                   key={card.id}
