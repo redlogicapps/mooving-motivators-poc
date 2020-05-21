@@ -15,6 +15,7 @@ export const Card = (props) => {
           src={props.src}
           width="150px"
           sizes="150px"
+          className="card"
         ></img>
       )}
     </Draggable>
