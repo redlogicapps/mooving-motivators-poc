@@ -5,7 +5,7 @@ import "./card-styles.css";
 
 export const Card = (props) => {
   return (
-    <Draggable key={props.id} draggableId={props.id} index={props.index}>
+    <Draggable key={props.id} draggableId={props.id} index={props.index} isDragDisabled={!props.isOrderMode}>
       {(provided) => (
         <img
           {...provided.dragHandleProps}
@@ -13,9 +13,9 @@ export const Card = (props) => {
           ref={provided.innerRef}
           alt="motivator"
           src={props.src}
-          width="150px"
-          sizes="150px"
-          className="card"
+          width="100px"
+          sizes="100px"
+          className={`card ${props.cardState === 1 ? 'up' : (props.cardState === 2) ? 'down' : ''}`}
         ></img>
       )}
     </Draggable>

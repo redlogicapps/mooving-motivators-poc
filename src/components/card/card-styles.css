@@ -2,4 +2,14 @@
     background-color: white;
     margin: 10px;
     border: 1px solid;
+    position: relative;
+    top: 0%;
+}
+
+.up {
+    top: -20%;
+}
+
+.down {
+    top: 20%;
 }
