@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7b454b2b9d629dc6b8e0b77a277f2aef",
+    "revision": "7ef36eaea0cad2c6585a7d9b8d00992c",
     "url": "/mooving-motivators-poc/index.html"
   },
   {
-    "revision": "0ae619583444966f344c",
-    "url": "/mooving-motivators-poc/static/css/main.c1f67a07.chunk.css"
+    "revision": "210f8647f6bf0e265ea9",
+    "url": "/mooving-motivators-poc/static/css/main.90c1f16b.chunk.css"
   },
   {
-    "revision": "27a1557bf18b261294eb",
-    "url": "/mooving-motivators-poc/static/js/2.fbd5db74.chunk.js"
+    "revision": "1c9274046132dc148258",
+    "url": "/mooving-motivators-poc/static/js/2.fa94cdc6.chunk.js"
   },
   {
-    "revision": "0749163b59fbee32225059cb60c18af6",
-    "url": "/mooving-motivators-poc/static/js/2.fbd5db74.chunk.js.LICENSE.txt"
+    "revision": "fbfb5e42a41e7004782949e93fdf296a",
+    "url": "/mooving-motivators-poc/static/js/2.fa94cdc6.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "0ae619583444966f344c",
-    "url": "/mooving-motivators-poc/static/js/main.55402197.chunk.js"
+    "revision": "210f8647f6bf0e265ea9",
+    "url": "/mooving-motivators-poc/static/js/main.6c5f359d.chunk.js"
   },
   {
     "revision": "32223bf8bd380624a620",
