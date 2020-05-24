@@ -1,1 +1,24 @@
 
+.outerContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+    width: 100%;
+}
+.innerContainer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    flex-direction: row;
+    margin: 50px;
+    width: 50%;
+}
+.formContainer {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-around;
+    flex-direction: row;
+    width: 50%;
+}

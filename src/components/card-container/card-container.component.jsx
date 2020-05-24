@@ -14,6 +14,7 @@ import order from "../../images/order.png";
 import power from "../../images/power.png";
 import relatedness from "../../images/relatedness.png";
 import status from "../../images/status.png";
+import { firestore } from "../../firebase/firebase.config";
 
 export default class CardContainer extends React.Component {
   constructor(props) {
@@ -49,6 +50,10 @@ export default class CardContainer extends React.Component {
     };
   }
 
+  onSessionSnapshot(snapshot) {
+    console.log(snapshot.data());
+  }
+
   reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
@@ -58,6 +63,7 @@ export default class CardContainer extends React.Component {
   };
 
   onDragEnd = (result) => {
+    //this function needs to bve optimized
     const { destination, source } = result;
     var cardsTemp = this.state.cards;
     if (!destination) return;
@@ -66,9 +72,42 @@ export default class CardContainer extends React.Component {
       return;
     }
     //make the switch between the 2 cards
-    this.setState({cards: this.reorder(cardsTemp, source.index, destination.index)});
+    this.setState(
+      { cards: this.reorder(cardsTemp, source.index, destination.index) },
+      async () => {
+        if (this.props.sessionId !== "") {
+          //update firestore with the state
+          const sesRef = await firestore.doc(
+            `/moving-motivators-sessions/${this.props.sessionId}`
+          );
+          const sesSnapShot = await sesRef.get();
+          if (!sesSnapShot.exists) {
+            await sesRef.set(this.state);
+          } else {
+            await sesRef.update(this.state);
+          }
+        }
+      }
+    );
   };
 
+  async componentDidUpdate(prevProps) {
+    if (
+      this.props.sessionId !== prevProps.sessionId &&
+      this.props.sessionId !== ""
+    ) {
+      //update firestore with the state
+      const sesRef = await firestore.doc(
+        `/moving-motivators-sessions/${this.props.sessionId}`
+      );
+      sesRef.onSnapshot((snapshot) => {
+        console.log(snapshot.metadata.hasPendingWrites);
+
+        this.setState(snapshot.data());
+      });
+    }
+    console.log("component did update");
+  }
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
