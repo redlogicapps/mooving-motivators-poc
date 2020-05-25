@@ -21,8 +21,8 @@ export default class CardContainer extends React.Component {
     super(props);
     const CARD_STATE = {
       UP: 1,
-      DOWN: 2,
-      NEUTRAL: 3,
+      NEUTRAL: 2,
+      DOWN: 3,
     };
     this.state = {
       cards: [
@@ -92,14 +92,24 @@ export default class CardContainer extends React.Component {
   };
 
   eventUpHandler(event, index) {
-    console.log(index);
-    var newState = {cards: [...this.state.cards]}; 
-    newState.cards[index].state = 1;
+    var newState = { cards: [...this.state.cards] };
+    var newCardState = newState.cards[index].state;
+    if (newCardState > 1) {
+      newCardState -= 1;
+    }
+
+    newState.cards[index].state = newCardState;
     this.setState(newState);
   }
 
   eventDownHandler(event, index) {
-    this.state.cards[index].state = 2;
+    var newState = { cards: [...this.state.cards] };
+    var newCardState = newState.cards[index].state;
+    if (newCardState < 3) {
+      newCardState += 1;
+    }
+    newState.cards[index].state = newCardState;
+    this.setState(newState);
   }
 
   async componentDidUpdate(prevProps) {

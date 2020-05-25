@@ -15,7 +15,9 @@ export const Card = ({id, index, isOrderMode, src, ...otherProps}) => {
       isDragDisabled={!isOrderMode}
     >
       {(provided) => (
-        <div className="cardOverlay">
+        <div className={`cardOverlay ${
+          otherProps.cardState === 1 ? "up" : otherProps.cardState === 3 ? "down" : ""
+        }`}>
           <img
             {...provided.dragHandleProps}
             {...provided.draggableProps}
@@ -24,9 +26,7 @@ export const Card = ({id, index, isOrderMode, src, ...otherProps}) => {
             src={src}
             width="100px"
             sizes="100px"
-            className={`card ${
-              otherProps.cardState === 1 ? "up" : otherProps.cardState === 2 ? "down" : ""
-            }`}
+            className="card"
           ></img>
           {!isOrderMode &&
           <div className="up-vote">
