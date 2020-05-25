@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/mooving-motivators-poc/static/css/main.6df367d1.chunk.css",
-    "main.js": "/mooving-motivators-poc/static/js/main.5cc1a3ed.chunk.js",
-    "main.js.map": "/mooving-motivators-poc/static/js/main.5cc1a3ed.chunk.js.map",
-    "runtime-main.js": "/mooving-motivators-poc/static/js/runtime-main.220c2920.js",
-    "runtime-main.js.map": "/mooving-motivators-poc/static/js/runtime-main.220c2920.js.map",
-    "static/js/2.38f8b4e9.chunk.js": "/mooving-motivators-poc/static/js/2.38f8b4e9.chunk.js",
-    "static/js/2.38f8b4e9.chunk.js.map": "/mooving-motivators-poc/static/js/2.38f8b4e9.chunk.js.map",
+    "main.css": "/mooving-motivators-poc/static/css/main.12ca91fa.chunk.css",
+    "main.js": "/mooving-motivators-poc/static/js/main.470eb564.chunk.js",
+    "main.js.map": "/mooving-motivators-poc/static/js/main.470eb564.chunk.js.map",
+    "runtime-main.js": "/mooving-motivators-poc/static/js/runtime-main.4a986d3b.js",
+    "runtime-main.js.map": "/mooving-motivators-poc/static/js/runtime-main.4a986d3b.js.map",
+    "static/js/2.b419121c.chunk.js": "/mooving-motivators-poc/static/js/2.b419121c.chunk.js",
+    "static/js/2.b419121c.chunk.js.map": "/mooving-motivators-poc/static/js/2.b419121c.chunk.js.map",
     "index.html": "/mooving-motivators-poc/index.html",
-    "precache-manifest.f61898c02eb9023f538d470609a4879a.js": "/mooving-motivators-poc/precache-manifest.f61898c02eb9023f538d470609a4879a.js",
+    "precache-manifest.52d8cf282c265bd02d091958cd51ca30.js": "/mooving-motivators-poc/precache-manifest.52d8cf282c265bd02d091958cd51ca30.js",
     "service-worker.js": "/mooving-motivators-poc/service-worker.js",
-    "static/css/main.6df367d1.chunk.css.map": "/mooving-motivators-poc/static/css/main.6df367d1.chunk.css.map",
-    "static/js/2.38f8b4e9.chunk.js.LICENSE.txt": "/mooving-motivators-poc/static/js/2.38f8b4e9.chunk.js.LICENSE.txt",
+    "static/css/main.12ca91fa.chunk.css.map": "/mooving-motivators-poc/static/css/main.12ca91fa.chunk.css.map",
+    "static/js/2.b419121c.chunk.js.LICENSE.txt": "/mooving-motivators-poc/static/js/2.b419121c.chunk.js.LICENSE.txt",
     "static/media/acceptance.png": "/mooving-motivators-poc/static/media/acceptance.f9297b4a.png",
     "static/media/curiosity.png": "/mooving-motivators-poc/static/media/curiosity.faccd343.png",
     "static/media/freedom.png": "/mooving-motivators-poc/static/media/freedom.801795ab.png",
@@ -21,9 +21,9 @@
     "static/media/relatedness.png": "/mooving-motivators-poc/static/media/relatedness.915cedde.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.220c2920.js",
-    "static/js/2.38f8b4e9.chunk.js",
-    "static/css/main.6df367d1.chunk.css",
-    "static/js/main.5cc1a3ed.chunk.js"
+    "static/js/runtime-main.4a986d3b.js",
+    "static/js/2.b419121c.chunk.js",
+    "static/css/main.12ca91fa.chunk.css",
+    "static/js/main.470eb564.chunk.js"
   ]
 }
