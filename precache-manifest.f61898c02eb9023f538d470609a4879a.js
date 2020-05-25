@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "098c05175aaccd4a1e902ecedc1b7d4f",
+    "revision": "bcc8c9c89ccc25309930bcac6a20ac5c",
     "url": "/mooving-motivators-poc/index.html"
   },
   {
-    "revision": "13ac02a190144eec33f0",
+    "revision": "1e745d9e87b6b0fed254",
     "url": "/mooving-motivators-poc/static/css/main.6df367d1.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mooving-motivators-poc/static/js/2.38f8b4e9.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "13ac02a190144eec33f0",
-    "url": "/mooving-motivators-poc/static/js/main.ae829232.chunk.js"
+    "revision": "1e745d9e87b6b0fed254",
+    "url": "/mooving-motivators-poc/static/js/main.5cc1a3ed.chunk.js"
   },
   {
     "revision": "fc6b54b4378c86d9f3b5",

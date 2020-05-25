@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/mooving-motivators-poc/precache-manifest.8fa11b5974af9be2f27fcbf8e40730ee.js"
+  "/mooving-motivators-poc/precache-manifest.f61898c02eb9023f538d470609a4879a.js"
 );
 
 self.addEventListener('message', (event) => {
