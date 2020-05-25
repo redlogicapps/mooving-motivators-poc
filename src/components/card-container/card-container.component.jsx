@@ -91,6 +91,17 @@ export default class CardContainer extends React.Component {
     );
   };
 
+  eventUpHandler(event, index) {
+    console.log(index);
+    var newState = {cards: [...this.state.cards]}; 
+    newState.cards[index].state = 1;
+    this.setState(newState);
+  }
+
+  eventDownHandler(event, index) {
+    this.state.cards[index].state = 2;
+  }
+
   async componentDidUpdate(prevProps) {
     if (
       this.props.sessionId !== prevProps.sessionId &&
@@ -131,6 +142,8 @@ export default class CardContainer extends React.Component {
                       index={index}
                       cardState={card.state}
                       isOrderMode={this.props.isOrderMode}
+                      eventUpHandler={this.eventUpHandler.bind(this)}
+                      eventDownHandler={this.eventDownHandler.bind(this)}
                     />
                   ))}
                   {provided.placeholder}

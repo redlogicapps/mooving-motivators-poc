@@ -2,21 +2,45 @@
 import * as React from "react";
 import { Draggable } from "react-beautiful-dnd";
 import "./card-styles.css";
+import Fab from "@material-ui/core/Fab";
+import AddIcon from "@material-ui/icons/Add";
+import RemoveIcon from "@material-ui/icons/Remove";
 
-export const Card = (props) => {
+export const Card = ({id, index, isOrderMode, src, ...otherProps}) => {
   return (
-    <Draggable key={props.id} draggableId={props.id} index={props.index} isDragDisabled={!props.isOrderMode}>
+    <Draggable
+      key={id}
+      draggableId={id}
+      index={index}
+      isDragDisabled={!isOrderMode}
+    >
       {(provided) => (
-        <img
-          {...provided.dragHandleProps}
-          {...provided.draggableProps}
-          ref={provided.innerRef}
-          alt="motivator"
-          src={props.src}
-          width="100px"
-          sizes="100px"
-          className={`card ${props.cardState === 1 ? 'up' : (props.cardState === 2) ? 'down' : ''}`}
-        ></img>
+        <div className="cardOverlay">
+          <img
+            {...provided.dragHandleProps}
+            {...provided.draggableProps}
+            ref={provided.innerRef}
+            alt="motivator"
+            src={src}
+            width="100px"
+            sizes="100px"
+            className={`card ${
+              otherProps.cardState === 1 ? "up" : otherProps.cardState === 2 ? "down" : ""
+            }`}
+          ></img>
+          {!isOrderMode &&
+          <div className="up-vote">
+            <Fab color="primary" aria-label="add" size="small" onClick={(event) => {otherProps.eventUpHandler(event, index)}}>
+              <AddIcon />
+            </Fab>
+          </div>}
+          {!isOrderMode &&
+          <div className="down-vote" >
+            <Fab color="secondary" aria-label="add" size="small" onClick={(event) => {otherProps.eventDownHandler(event, index)}}>
+              <RemoveIcon />
+            </Fab>
+          </div>}
+        </div>
       )}
     </Draggable>
   );

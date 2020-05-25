@@ -13,3 +13,33 @@
 .down {
     top: 20%;
 }
+
+.cardOverlay {
+    position: relative;
+}
+.cardOverlay .up-vote {
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    display: none;
+    color: #FFF;
+}
+.cardOverlay:hover .up-vote {
+    display: block;
+    text-align: center;
+}
+
+.cardOverlay .down-vote {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 50%;
+    display: none;
+    color: #FFF;
+}
+.cardOverlay:hover .down-vote {
+    display: block;
+    text-align: center;
+}
