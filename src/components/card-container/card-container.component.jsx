@@ -50,10 +50,6 @@ export default class CardContainer extends React.Component {
     };
   }
 
-  onSessionSnapshot(snapshot) {
-    console.log(snapshot.data());
-  }
-
   reorder = (list, startIndex, endIndex) => {
     const result = Array.from(list);
     const [removed] = result.splice(startIndex, 1);
@@ -114,7 +110,7 @@ export default class CardContainer extends React.Component {
 
   async componentDidUpdate(prevProps) {
     if (
-      this.props.sessionId !== prevProps.sessionId &&
+      this.props.isSessionId !== prevProps.isSessionId &&
       this.props.sessionId !== ""
     ) {
       //update firestore with the state
@@ -122,13 +118,11 @@ export default class CardContainer extends React.Component {
         `/moving-motivators-sessions/${this.props.sessionId}`
       );
       sesRef.onSnapshot((snapshot) => {
-        console.log(snapshot.metadata.hasPendingWrites);
-
         this.setState(snapshot.data());
       });
     }
-    console.log("component did update");
   }
+
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>

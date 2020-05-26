@@ -45,7 +45,7 @@ class MovingMotivators extends React.Component {
     return (
       <div className="outerContainer">
         <h1 className="title">Moving Motivators v0.0.2</h1>
-        <CardContainer isOrderMode={this.state.isOrderMode} sessionId={this.state.sessionId}/>
+        <CardContainer isOrderMode={this.state.isOrderMode} sessionId={this.state.sessionId} isSessionId={this.state.isSessionId}/>
         <div className="innerContainer">
           <RadioGroup
             name="choice"
