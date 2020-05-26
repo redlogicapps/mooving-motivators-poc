@@ -2,7 +2,6 @@
   "name": "mooving-motivators-poc",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://redlogicapps.github.io/mooving-motivators-poc",
   "dependencies": {
     "@material-ui/core": "^4.9.13",
     "@material-ui/icons": "^4.9.1",
